@@ -37,6 +37,20 @@ Change personal info in the 3 the data files in *views/_data*
 
 Overwrite the picture *assets/assets/me.jpg* with a picture of yourself.
 
+## Development
+
+For development run
+
+```bash
+npm run build:css && npm run serve
+```
+
+Make sure you rebuild the css file if you make changes to either tailwind.config.js or tailwind.css. Postcss is not watching for those are usually they change very rarely since with tailwind we can write all the classes in the html file and dont need to rebuild the css file itself.
+
+```bash
+npm run build:css
+```
+
 ## Build
 
 For an optimized production build set `NODE_ENV` to production
