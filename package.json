@@ -4,6 +4,7 @@
   "description": "personal website",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build:css && npm run serve",
     "comment": "echo 'export NODE_ENV=production for optimized build output\n'",
     "build": "npm run build:site && npm run build:css",
     "build:css": "postcss tailwind.css -o dist/assets/main.css",
@@ -17,16 +18,16 @@
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-cache-assets": "^2.1.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.1",
     "autoprefixer": "^10.2.5",
     "clean-css": "^5.1.2",
-    "cssnano": "^5.0.0",
+    "cssnano": "^5.0.6",
     "dotenv": "^8.2.0",
     "html-minifier": "^4.0.0",
     "markdown-it-prism": "^2.1.6",
-    "postcss": "^8.2.8",
+    "postcss": "^8.3.3",
     "postcss-cli": "^8.3.1",
-    "postcss-nesting": "^7.0.1",
+    "postcss-nesting": "^8.0.1",
     "tailwindcss": "^2.0.4"
   },
   "devDependencies": {
