@@ -11,9 +11,6 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPlugin(syntaxHighlight)
 
-    // use to slugify anchors
-    const slugify = eleventyConfig.javascriptFunctions.slug;
-
     const pluginTOC = require('eleventy-plugin-nesting-toc');
     eleventyConfig.addPlugin(pluginTOC);
 
@@ -25,12 +22,8 @@ module.exports = function (eleventyConfig) {
             linkify: true,
             typographer: true,
         }).use(markdownItAnchor, {
-            slugify,
-            permalink: true,
-            permalinkClass: "tdbc-anchor",
-            permalinkSymbol: "#",
-            permalinkSpace: true,
-            permalinkBefore: false,
+            slugify: eleventyConfig.javascriptFunctions.slug,
+            permalink: markdownItAnchor.permalink.headerLink()
         })
     );
 

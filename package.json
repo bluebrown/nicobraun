@@ -2,7 +2,7 @@
   "name": "slim-page",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": ".eleventy.js",
   "scripts": {
     "build": "rm -rf dist && eleventy",
     "dev": "eleventy --watch",
