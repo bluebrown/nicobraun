@@ -5,7 +5,7 @@
   "main": ".eleventy.js",
   "scripts": {
     "build": "rm -rf dist && eleventy",
-    "dev": "eleventy --watch",
+    "dev": "rm -rf dist && eleventy --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
