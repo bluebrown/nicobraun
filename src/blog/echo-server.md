@@ -136,7 +136,7 @@ When running starting the container now, we can also see the health status via C
 
 ```shell
 $ docker run --rm  --detach --name echo-server -p 80:80  bluebrown/echo-server
-$ docker ps -a --format '{{.Names}} - {{.Status}}'
+$ docker ps -a --format {% raw %}'{{.Names}} - {{.Status}}'{% endraw %}
 echo-server - Up 5 seconds (health: starting)
 ```
 
@@ -169,7 +169,7 @@ The reason is, that the health check command is executed inside the container, a
 
 ```shell
 docker inspect echo-server --format \
-  '{{range .State.Health.Log}}{{.End}} | Exit Code: {{.ExitCode}} | {{.Output}}{{end}}
+ {%raw%}  '{{range .State.Health.Log}}{{.End}} | Exit Code: {{.ExitCode}} | {{.Output}}{{end}} {%endraw%}
 ```
 
 ```shell
@@ -283,7 +283,7 @@ If you now inspect the image you can find the labels.
 
 ```shell
 docker inspect bluebrown/echo-server --format \
-'{{range $key, $val := .ContainerConfig.Labels}}{{printf "%s = %s\n" $key $val }}{{end}}'
+{%raw%}  '{{range $key, $val := .ContainerConfig.Labels}}{{printf "%s = %s\n" $key $val }}{{end}}'{%endraw%}
 ```
 
 <details>
