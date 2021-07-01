@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ context.path }}/assets/styles/vsc.css">
+  <link rel="stylesheet" href="{{ context.path }}/assets/styles/reset.css">
+  <link rel="stylesheet" href="{{ context.path }}/assets/styles/main.css">
+</head>
+
+<body class="{{css}}" style="position: relative;">
+  <section id="container" class="container">
+    
+    <article id="markdown" class="markdown">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </article>
+
+    {% if title != 'Nico Braun' %}
+    <aside id="on-this-page">
+      <h2>What is on this Page?</h2>
+      {{ content | toc | safe }}
+    </aside>
+    {% endif %}
+
+    <aside id="`post-list" >
+      <h2>Blog Posts</h2>
+      <ul class="styled">
+        {%- for post in collections.post -%}
+        <li>
+          <a href="{{ context.path }}{{ post.url }}">{{ post.data.title }}</a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </aside>
+
+    {% if title != 'Nico Braun' %}
+    <aside id="contact">
+      <h2>Contact</h2>
+      <ul class="styled">
+        <li>
+          <a href="https://twitter.com/messages/compose?recipient_id=3169215365">Message @codingsafari</a>
+        </li>
+        <li>
+          <a href="{{ context.path }}/">About Me</a>
+        </li>
+      </ul>
+    </aside>
+    {% endif %}
+
+  </section>
+</body>
+
+</html>
