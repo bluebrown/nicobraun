@@ -30,6 +30,9 @@
         grid-template-areas: "toc" "md" "posts" "contact";
         grid-template-columns: minmax(320px, 680px);
     }
+    body.index #container {
+        grid-template-areas: "md" "posts";
+    }
 }
 
 #markdown {
