@@ -11,7 +11,7 @@ This project showcases some strategies for service discovery with docker and doc
 
 Before we dive into more advanced strategies, lets review some of the basics.
 
-## Docker's built-in Nameserver & Loadbalancer
+## Dockers built-in Nameserver & Loadbalancer
 
 Docker comes with a built-in [nameserver](https://docs.docker.com/config/containers/container-networking/#dns-services). The server is, by default, reachable via `127.0.0.11:53`.
 
@@ -23,13 +23,12 @@ If you only ask for the `service` docker will perform `internal load balancing` 
 
 When swarm is used, docker will additionally use two special networks.
 
-1. The `ingress network`, which is actually an [overloay network](https://docs.docker.com/network/overlay/) and handles incomming trafic to the swarm. It allows to query any service from any node in the swarm.
+1. The `ingress network`, which is actually an [overlay network](https://docs.docker.com/network/overlay/) and handles incoming traffic to the swarm. It allows to query any service from any node in the swarm.
 2. The `docker_gwbridge`, a [bridge network](https://docs.docker.com/network/bridge/), which connects the overlay networks of the individual hosts to an their physical network. (including ingress)
 
 When using swarm to [deploy services](https://docs.docker.com/compose/compose-file/#deploy), the  behavior as described in the examples below will not work unless endpointmode is set to dns roundrobin instead of vip.
 
 > endpoint_mode: vip - Docker assigns the service a virtual IP (VIP) that acts as the front end for clients to reach the service on a network. Docker routes requests between the client and available worker nodes for the service, without client knowledge of how many nodes are participating in the service or their IP addresses or ports. (This is the default.)
-
 > endpoint_mode: dnsrr - DNS round-robin (DNSRR) service discovery does not use a single virtual IP. Docker sets up DNS entries for the service such that a DNS query for the service name returns a list of IP addresses, and the client connects directly to one of these. DNS round-robin is useful in cases where you want to use your own load balancer, or for Hybrid Windows and Linux applications.
 
 ## Example
@@ -98,11 +97,11 @@ docker run --rm --network dig_default tutum/dnsutils dig +short dig_whoami_2
 
 ### Load balancing
 
-The default loadbalancing happens on the transport layer or layer 4 of the [OSI Model](https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/). So it is TCP/UDP based. So it is not possible to inpsect and manipulate http headers with this method. In the enterprise edition it is apparently possible to use labels similar to the ones treafik is using in the example a bit further down.
+The default loadbalancing happens on the transport layer or layer 4 of the [OSI Model](https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/). So it is TCP/UDP based. So it is not possible to inspect and manipulate http headers with this method. In the enterprise edition it is apparently possible to use labels similar to the ones traefik is using in the example a bit further down.
 
   [3]: https://blog.octo.com/en/how-does-it-work-docker-part-3-load-balancing-service-discovery-and-security/
 
-```
+```shell
 docker run --rm --network dig_default curlimages/curl -Ls http://whoami
 ```
 
@@ -119,7 +118,7 @@ Accept: */*
 
 Here is the hostname from 10 times curl:
 
-```
+```shell
 Hostname: eedc94d45bf4
 Hostname: 42312c03a825
 Hostname: 42312c03a825
@@ -175,7 +174,7 @@ docker service create --network testnet --replicas 2 --name digme nginx
 
 Now lets use dig again and making sure we attach the container to the same network
 
-```
+```shell
 $ docker run --network testnet --rm tutum/dnsutils dig  digme
 digme.                  600     IN      A       10.0.18.6
 ```
@@ -210,11 +209,11 @@ This way we get both IPs without adding the prefix `tasks`.
 
 ## Service Discovery & Loadbalancing Strategies
 
-If the built in features are not sufficent, some strategies can be implemented to achieve better control. Below are some examples.
+If the built in features are not sufficient, some strategies can be implemented to achieve better control. Below are some examples.
 
 ### HAProxy
 
-[Haproxy](https://www.haproxy.com/) can use the docker nameserver in combination with [dynamic server templates](https://www.haproxy.com/blog/whats-new-haproxy-1-8/#server-template-configuration-directive) to discover the running container. Then the traditional proxy features can be leveraged to achieve powerful layer 7 load balancing with http header manipulation and [chaos engeering](https://www.haproxy.com/blog/haproxy-layer-7-retries-and-chaos-engineering/) such as retries.
+[Haproxy](https://www.haproxy.com/) can use the docker nameserver in combination with [dynamic server templates](https://www.haproxy.com/blog/whats-new-haproxy-1-8/#server-template-configuration-directive) to discover the running container. Then the traditional proxy features can be leveraged to achieve powerful layer 7 load balancing with http header manipulation and [chaos engineering](https://www.haproxy.com/blog/haproxy-layer-7-retries-and-chaos-engineering/) such as retries.
 
 ```yml
 version: '3.8'
