@@ -1,0 +1,9 @@
+{% set css %}
+{% include "css/vsc.css" %}
+{% include "css/reset.css" %}
+{% include "css/main.css" %}
+{% endset %}
+
+<style>
+  {{css | cssmin | safe}}
+</style>

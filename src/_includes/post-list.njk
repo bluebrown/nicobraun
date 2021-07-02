@@ -1,0 +1,10 @@
+<aside id="post-list">
+    <h2>Blog Posts</h2>
+    <ul class="styled">
+        {%- for post in collections.all -%}
+        <li>
+            <a href="{{ context.path }}{{ post.url }}">{{ post.data.title }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+</aside>

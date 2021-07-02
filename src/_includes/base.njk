@@ -4,82 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <title>{{ title }}</title>
-
-  {% set description %}{{content | striptags | truncate(200)}}{% endset %}
-  {% set canonical %}https://{{ context.host }}{{ context.path }}{{ page.url }}{% endset %}
-
-  <link rel="canonical" href="{{ canonical }}" />
-
-  <meta name=”robots” content="index, follow" />
-  <meta name="description" content="{{ description }}" />
-  <meta name="keywords" content="{{ tags }}" />
-
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{ title }}" />
-  <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="{{ context.host }}{{ context.path }}/assets/images/logo.svg" />
-  <meta property="og:url" content="{{ canonical }}" />
-  <meta property="og:site_name" content="{{ context.host }}" />
-
-  {% set css %}
-  {% include "css/vsc.css" %}
-  {% include "css/reset.css" %}
-  {% include "css/main.css" %}
-  {% endset %}
-
-  <style>
-    {{css | cssmin | safe}}
-  </style>
+  {% include "meta.njk" %}
+  {% include "styles.njk" %}
 </head>
 
 <body>
-  <nav id="nav">
-    <a id="home-link" href="{{ context.path }}/">Rainbowstack</a>
-  </nav>
+  
+  {% include "nav.njk" %}
+  
   <section id="container" class="container">
 
-    <article id="markdown" class="markdown">
-      <h1>{{ title }}</h1>
-      {{ content | safe }}
-    </article>
+    {% include "markdown.njk" %}
 
-    {% if title != 'Nico Braun' %}
-    <aside id="on-this-page">
-      <h2>What is on this Page?</h2>
-      {{ content | toc | safe }}
-    </aside>
+    {% if eleventyExcludeFromCollections != true %}
+      {% include "toc.njk" %}
     {% endif %}
 
-    <aside id="`post-list">
-      <h2>Blog Posts</h2>
-      <ul class="styled">
-        {%- for post in collections.all -%}
-        {% if post.data.title != 'Nico Braun' %}
-        <li>
-          <a href="{{ context.path }}{{ post.url }}">{{ post.data.title }}</a>
-        </li>
-        {% endif %}
-        {%- endfor -%}
-      </ul>
-    </aside>
+    {% include "post-list.njk" %}
 
-    {% if title != 'Nico Braun' %}
-    <aside id="contact">
-      <h2>Contact</h2>
-      <ul class="styled">
-        <li>
-          <a href="https://twitter.com/messages/compose?recipient_id=3169215365">Message @codingsafari</a>
-        </li>
-        <li>
-          <a href="{{ context.path }}/">About Me</a>
-        </li>
-      </ul>
-    </aside>
+    {% if eleventyExcludeFromCollections != true %}
+      {% include "contact.njk" %}
     {% endif %}
 
   </section>
+
 </body>
 
 </html>
