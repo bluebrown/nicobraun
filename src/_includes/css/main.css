@@ -2,26 +2,35 @@
     --markdown-min-width: 320px;
     --markdown-max-width: 680px;
     --aside-width: 24rem;
+    
     --page-font-size: 18px;
+    
     --roundness: 6px;
     --roundness-ter: 2px;
+    
     --gap-larger: 2.75rem;
     --gap-large: 2.25rem;
     --gap-small: 1.25rem;
+
     --color-lighter: #c9d1d9;
+    --color-gray-dark: #333435;
+    --color-gray:  rgb(88, 88, 88);
+    --color-gray-light:  rgb(107, 109, 112);
     --color-darker: #24292e;
     --color-accent: #58a6ff;
     --color-border: rgb(60, 61, 63);
+
     --text-primary: var(--color-lighter);
     --text-anchor: var(--color-accent);
+    
     --bg-page: #0d1117;
     --bg-highlight: #161b22;
-    --bg-highlight-bis: #333435;
-    --bg-highlight-ter: #3e4349;
+    --bg-highlight-bis: var(--color-gray-dark);
+    --bg-highlight-ter: var(--color-gray);
 
     --bg-scroll-track: var(--bg-highlight-bis);
-    --bg-scroll-thumb: var(--color-border);
-    --bg-scroll-thumb-hover: var( --bg-highlight-ter);
+    --bg-scroll-thumb: var(--bg-highlight-ter);
+    --bg-scroll-thumb-hover: var( --color-gray-light);
 
     --toggle-height: 20px;
     --toggle-padding-y: 3px;
@@ -44,7 +53,7 @@
     --bg-highlight-ter: #a7a4a4;
     --bg-scroll-track: var(--bg-highlight);
     --bg-scroll-thumb: var(--bg-highlight-bis);
-    --bg-scroll-thumb-hover: var( --bg-highlight-ter);
+    --bg-scroll-thumb-hover: var(--bg-highlight-ter);
 }
 
 #container {
@@ -181,6 +190,7 @@ li ul, li ol {
 
 ::-webkit-scrollbar {
     height: 12px;
+    width: 14px;
 }
 
 ::-webkit-scrollbar-track {
