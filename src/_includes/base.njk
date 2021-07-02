@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% set css %}
-{% include "css/vsc.css" %}
-{% include "css/reset.css" %}
-{% include "css/main.css" %}
-{% endset %}
-
-{% set description %}{{content | striptags | truncate(200)}}{% endset %}
-
-{% set canonical %}https://{{ context.host }}{{ context.path }}{{ page.url }}{% endset %}
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>{{ title }}</title>
+
+  {% set description %}{{content | striptags | truncate(200)}}{% endset %}
+  {% set canonical %}https://{{ context.host }}{{ context.path }}{{ page.url }}{% endset %}
 
   <link rel="canonical" href="{{ canonical }}" />
 
   <meta name=”robots” content="index, follow" />
-  <meta name="description" content="{{description}}" />
-  <meta name="keywords" content="{{tags}}" />
+  <meta name="description" content="{{ description }}" />
+  <meta name="keywords" content="{{ tags }}" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{ title }}" />
-  <meta property="og:description" content="{{description}}">
-  <meta property="og:image" content="{{ context.host }}/assets/images/logo.svg" />
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ context.host }}{{ context.path }}/assets/images/logo.svg" />
   <meta property="og:url" content="{{ canonical }}" />
   <meta property="og:site_name" content="{{ context.host }}" />
+
+  {% set css %}
+  {% include "css/vsc.css" %}
+  {% include "css/reset.css" %}
+  {% include "css/main.css" %}
+  {% endset %}
 
   <style>
     {{css | cssmin | safe}}
