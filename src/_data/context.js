@@ -1,6 +1,7 @@
 module.exports = function() {
     return {
+        protocol: process.env.APP_PROTO || 'https',
         path: process.env.APP_PATH || '',
-        host: process.env.APP_HOST || '127.0.0.1',
+        host: process.env.APP_HOST || 'localhost',
     }
 }

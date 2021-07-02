@@ -1,5 +1,5 @@
 {% set description %}{{content | striptags | truncate(200)}}{% endset %}
-{% set canonical %}https://{{ context.host }}{{ context.path }}{{ page.url }}{% endset %}
+{% set canonical %}{{ context.protocol }}://{{ context.host }}{{ context.path }}{{ page.url }}{% endset %}
 
 <link rel="canonical" href="{{ canonical }}" />
 
@@ -10,6 +10,6 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ description }}">
-<meta property="og:image" content="https://{{ context.host }}{{ context.path }}/assets/images/fly.jpg" />
+<meta property="og:image" content="{{ context.protocol }}://{{ context.host }}{{ context.path }}/assets/images/fly.jpg" />
 <meta property="og:url" content="{{ canonical }}" />
 <meta property="og:site_name" content="{{ context.host }}" />
