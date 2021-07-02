@@ -30,7 +30,10 @@
     margin: 0 auto;
     display: grid;
     place-content: center;
-    grid-template-areas: "md toc" "md posts" "md contact";
+    grid-template-areas: "md posts" 
+                         "md toc" 
+                         "md contact";
+    
     grid-template-columns: minmax(var(--markdown-min-width), var(--markdown-max-width)) var(--aside-width);
     grid-template-rows: auto auto 1fr;
     column-gap: var(--gap-larger);
