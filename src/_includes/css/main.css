@@ -30,9 +30,9 @@
     margin: 0 auto;
     display: grid;
     place-content: center;
-    grid-template-areas: "md posts" 
-                         "md toc" 
-                         "md contact";
+    grid-template-areas:    "md toc" 
+                            "md posts" 
+                            "md contact";
     
     grid-template-columns: minmax(var(--markdown-min-width), var(--markdown-max-width)) var(--aside-width);
     grid-template-rows: auto auto 1fr;
@@ -40,14 +40,23 @@
     row-gap: var(--gap-small);
 }
 
+body.index #container {
+    grid-template-areas:    "md posts"; 
+    grid-template-rows: 1fr;
+
+}
+
 @media screen and (max-width: 1080px) {
     #container {
         display: grid;
-        grid-template-areas: "toc" "md" "posts" "contact";
+        grid-template-areas:    "toc" "md" 
+                                "posts" "contact";
+        
         grid-template-columns: minmax(var(--markdown-min-width), var(--markdown-max-width));
     }
     body.index #container {
-        grid-template-areas: "md" "posts";
+        grid-template-areas:    "md" 
+                                "posts";
     }
 }
 

@@ -9,7 +9,7 @@
   {% include "styles.njk" %}
 </head>
 
-<body>
+<body class="{% if eleventyExcludeFromCollections == true %} index {% endif %}">
   
   {% include "nav.njk" %}
   
