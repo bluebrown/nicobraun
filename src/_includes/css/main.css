@@ -70,7 +70,6 @@ body {
     background-color: var(--bg-page);
     word-wrap: break-word;
     color: var(--text-primary);
-    padding-bottom: 24rem;
 }
 
 h1 {
