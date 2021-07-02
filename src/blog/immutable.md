@@ -1,8 +1,12 @@
 ---
 layout: base.njk
 title: Immutable Infrastructure in AWS with Packer, Ansible and Terraform
-tags: post
-css: post
+tags:
+  - aws
+  - ansible
+  - packer
+  - terraform
+  - linode
 ---
 
 > Immutable infrastructure is an approach to managing services and software deployments on IT resources wherein components are replaced rather than changed. An application or services is effectively redeployed each time any change occurs.

@@ -1,8 +1,12 @@
 ---
 layout: base.njk
 title: Docker Service Discovery & Loadbalancing Strategies
-tags: post
-css: post
+tags:
+  - docker
+  - docker-swarm
+  - load-balancing
+  - dns
+  - networking
 ---
 
 A common question that arises is how does service discovery in docker work. And how does docker route the traffic.

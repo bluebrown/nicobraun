@@ -1,8 +1,10 @@
 ---
 layout: base.njk
 title: Kubernetes - DNS Resolution
-tags: post
-css: post
+tags:
+  - kubernetes
+  - dns
+  - networking
 ---
 
 

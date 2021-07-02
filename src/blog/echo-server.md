@@ -1,8 +1,10 @@
 ---
 layout: base.njk
 title: Building Production Grade Container Images
-tags: post
-css: post
+tags:
+  - docker
+  - go
+  - http
 ---
 
 When building and running images locally for development purposes, many best practices are neglected. However, eventually the image gets deployed. For a real deployment we want to take additional steps.

@@ -36,6 +36,11 @@ module.exports = function (eleventyConfig) {
         return content;
       });
 
+    
+    eleventyConfig.addShortcode('teaser', function(content) {
+        return content.substring(0, 200);
+    })
+
     eleventyConfig.setTemplateFormats([
         "md",
         "njk",

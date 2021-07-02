@@ -1,8 +1,10 @@
 ---
 layout: base.njk
 title: Kubernetes - Ingress Controller
-tags: post
-css: post
+tags:
+  - kubernetes
+  - load-balancing
+  - networking
 ---
 
 Routing external traffic to the various pods in a cluster is one of the major problems when it comes to container orchestration.

@@ -1,8 +1,9 @@
 ---
 layout: base.njk
 title: Python Cheat Sheet for JavaScripters
-tags: post
-css: post
+tags:
+  - programming
+  - python
 ---
 
 Python has a lot in common with JavaScript. Functions are first class citizens and everything is an object.

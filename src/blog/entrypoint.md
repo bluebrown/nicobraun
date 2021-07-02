@@ -1,8 +1,8 @@
 ---
 layout: base.njk
 title: Advanced Entrypoint Techniques for Docker Container
-tags: post
-css: post
+tags:
+    - docker
 ---
 
 Building good images can be challenging. We want to provide enough abstraction and flexibility for the image to be used in different scenarios without having to rebuild them in every case. We also want to make it easy for users to use the image.
