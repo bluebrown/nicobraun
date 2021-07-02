@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Building Production Grade Container Images
+date: Last Modified
+created: 2021-06-28
 tags:
   - docker
   - go

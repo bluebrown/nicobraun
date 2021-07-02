@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Kubernetes - DNS Resolution
+date: Last Modified
+created: 2021-06-25
 tags:
   - kubernetes
   - dns

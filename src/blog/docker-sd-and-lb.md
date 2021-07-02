@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Docker Service Discovery & Loadbalancing Strategies
+date: Last Modified
+created: 2020-11-02
 tags:
   - docker
   - docker-swarm

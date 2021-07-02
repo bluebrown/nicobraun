@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Python Cheat Sheet for JavaScripters
+created: 2019-06-28
+date: Last Modified
 tags:
   - programming
   - python

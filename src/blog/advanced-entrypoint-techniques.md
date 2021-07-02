@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Advanced Entrypoint Techniques for Docker Container
+date: Last Modified
+created: 2021-06-27
 tags:
     - docker
 ---

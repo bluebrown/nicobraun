@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Kubernetes - Ingress Controller
+date: Last Modified
+created: 2021-06-27
 tags:
   - kubernetes
   - load-balancing

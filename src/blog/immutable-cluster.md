@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Immutable Infrastructure in AWS with Packer, Ansible and Terraform
+date: Last Modified
+created: 2021-04-23
 tags:
   - aws
   - ansible
