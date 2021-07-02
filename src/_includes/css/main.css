@@ -4,6 +4,7 @@
     --aside-width: 24rem;
     --page-font-size: 18px;
     --roundness: 6px;
+    --roundness-ter: 2px;
     --gap-larger: 2.75rem;
     --gap-large: 2.25rem;
     --gap-small: 1.25rem;
@@ -247,6 +248,7 @@ button {
     display: flex;
     background: var(--bg-highlight-ter);
     padding: 4px;
+    border-radius: var(--roundness-ter);
 }
 .dark-theme .toggle {
     justify-content: flex-end;
@@ -255,4 +257,5 @@ button {
     background-color: var(--color-accent);
     height: 100%;
     width: 50%;
+    border-radius: var(--roundness-ter);
 }
