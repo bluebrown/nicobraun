@@ -45,6 +45,7 @@ module.exports = function (eleventyConfig) {
         "md",
         "njk",
         "svg",
+        "txt",
     ]);
 
     return {

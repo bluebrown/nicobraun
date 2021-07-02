@@ -11,8 +11,6 @@
 
 {% set canonical %}https://{{ context.host }}{{ context.path }}{{ page.url }}{% endset %}
 
-
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,9 +29,6 @@
   <meta property="og:url" content="{{ canonical }}" />
   <meta property="og:site_name" content="{{ context.host }}" />
 
-  <!-- capture the CSS content as a Nunjucks variable -->
-
-  <!-- feed it through our cssmin filter to minify -->
   <style>
     {{css | cssmin | safe}}
   </style>
