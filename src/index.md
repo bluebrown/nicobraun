@@ -4,7 +4,7 @@ title: Nico Braun
 css: index
 ---
 
-Hi, I am a Solution Architect. I would love to chat about your IT project. hit me up via [@codingsafari](https://twitter.com/messages/compose?recipient_id=3169215365).
+Hi, I would love to chat about your IT project. Find me on [GitHub](https://github.com/bluebrown) or hit me up via [@codingsafari](https://twitter.com/messages/compose?recipient_id=3169215365).
 
 <br>
 

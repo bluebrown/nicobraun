@@ -1,15 +1,28 @@
 :root {
-    --text-primary: #c9d1d9;
+    --markdown-min-width: 320px;
+    --markdown-max-width: 680px;
+    --aside-width: 24rem;
+
+    --page-font-size: 18px;
+
+    --roundness: 6px;
+    
+    --gap-larger: 2.75rem;
+    --gap-large: 2.25rem;
+    --gap-small: 1.25rem;
+    
+    --color-lighter:  #c9d1d9;
+    --color-accent: #58a6ff;
+    --color-border: rgb(60, 61, 63);
+
+    --text-primary: var(--color-lighter);
+    --text-anchor: var(--color-accent);
+    
     --bg-page: #0d1117;
     --bg-highlight: #161b22;
     --bg-highlight-bis: #333435;
     --bg-highlight-ter: #3e4349;
-    --color-border: rgb(60, 61, 63);
-    --roundness: 6px;
-    --gap-larger: 2.75rem;
-    --gap-large: 2.25rem;
-    --gap-small: 1.25rem;
-    --page-font-size: 18px;
+
 }
 
 #container {
@@ -18,7 +31,7 @@
     display: grid;
     place-content: center;
     grid-template-areas: "md toc" "md posts" "md contact";
-    grid-template-columns: minmax(320px, 680px) 24rem;
+    grid-template-columns: minmax(var(--markdown-min-width), var(--markdown-max-width)) var(--aside-width);
     grid-template-rows: auto auto 1fr;
     column-gap: var(--gap-larger);
     row-gap: var(--gap-small);
@@ -28,7 +41,7 @@
     #container {
         display: grid;
         grid-template-areas: "toc" "md" "posts" "contact";
-        grid-template-columns: minmax(320px, 680px);
+        grid-template-columns: minmax(var(--markdown-min-width), var(--markdown-max-width));
     }
     body.index #container {
         grid-template-areas: "md" "posts";
@@ -57,7 +70,6 @@ body {
     background-color: var(--bg-page);
     word-wrap: break-word;
     color: var(--text-primary);
-    scroll-behavior: smooth;
     padding-bottom: 24rem;
 }
 
@@ -125,15 +137,15 @@ td, th {
     padding: 6px 13px;
 }
 
-ul, ol {
+.markdown ul, .markdown ol {
     padding-left: var(--gap-large);
 }
 
-ul {
+.markdown ul {
     list-style: disc;
 }
 
-li>ul {
+.markdown li>ul {
     list-style: circle;
 }
 
@@ -141,7 +153,7 @@ li ul, li ol {
     margin: 0;
 }
 
-ol {
+.markdown ol {
     list-style: decimal;
 }
 
@@ -162,15 +174,29 @@ ol {
     background: var(--bg-highlight-ter)
 }
 
-a {
-    color: rgb(88, 180, 255);
-}
-
-a:visited {
-    color: rgb(192, 219, 255);
-}
-
 img {
     width: 70%;
     margin: 0 auto;
+}
+
+a {
+    color: var(--text-anchor);
+}
+
+.markdown h1 a, .markdown h2 a, .markdown h3 a, .markdown h4 a, .markdown h5 a, .markdown h6 a {
+    color: inherit;
+}
+
+.toc a {
+    color: inherit;
+}
+
+.toc ol ol {
+    padding-left: var(--gap-small);
+    list-style: circle;
+}
+
+nav#nav {
+    background-color: var(--bg-highlight);
+    padding: .75rem;
 }
