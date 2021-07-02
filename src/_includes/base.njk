@@ -5,9 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="{{ context.path }}/assets/styles/vsc.css">
-  <link rel="stylesheet" href="{{ context.path }}/assets/styles/reset.css">
-  <link rel="stylesheet" href="{{ context.path }}/assets/styles/main.css">
+
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %}
+  {% include "css/vsc.css" %}
+  {% include "css/reset.css" %}
+  {% include "css/main.css" %}
+{% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | cssmin | safe }}
+</style>
 </head>
 
 <body class="{{css}}">

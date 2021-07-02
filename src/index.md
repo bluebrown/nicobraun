@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Nico Braun
+subtitle: Solution Architect
 css: index
 ---
 
