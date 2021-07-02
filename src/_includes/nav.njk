@@ -1,3 +1,18 @@
+<script>
+    function toggleTheme(event) {
+        console.log('toggle theme')
+        document.documentElement.classList.toggle('light-theme')
+        document.documentElement.classList.toggle('dark-theme')
+        localStorage.selectedTheme = document.documentElement.classList
+    }
+</script>
+
 <nav id="nav">
-    <a id="home-link" href="{{ context.path }}/">Rainbowstack</a>
+    <div class="nav-content">
+        <a id="home-link" href="{{ context.path }}/">Rainbowstack</a>
+        <div style="flex: 1"></div>
+        <button class="toggle" onclick="toggleTheme(event)">
+            <span class="toggle-handler"></span>
+        </button>
+    </div>
 </nav>

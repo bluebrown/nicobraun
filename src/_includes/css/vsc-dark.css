@@ -1,0 +1,243 @@
+.dark-theme pre[class*=language-], .dark-theme code[class*=language-] {
+	color: #d4d4d4;
+	font-size: 93%;
+	text-shadow: none;
+	font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.25;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+.dark-theme pre[class*=language-]::selection, .dark-theme code[class*=language-]::selection, .dark-theme pre[class*=language-] *::selection, .dark-theme code[class*=language-] *::selection {
+	text-shadow: none;
+	background: #75a7ca;
+}
+
+@media print {
+	.dark-theme pre[class*=language-], .dark-theme code[class*=language-] {
+		text-shadow: none;
+	}
+}
+
+.dark-theme pre[class*=language-] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+	background: var(--bg-highlight);
+}
+
+.dark-theme :not(pre)>code[class*=language-] {
+	padding: 0.1em 0.3em;
+	border-radius: 0.3em;
+	color: #db4c69;
+	background: #f9f2f4;
+}
+
+.dark-theme .namespace {
+	opacity: 0.7;
+}
+
+.dark-theme .token.doctype .token.doctype-tag {
+	color: #569CD6;
+}
+
+.dark-theme .token.doctype .token.name {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.comment, .dark-theme .token.prolog {
+	color: #6a9955;
+}
+
+.dark-theme .token.punctuation, .dark-theme .language-html .language-css .token.punctuation, .dark-theme .language-html .language-javascript .token.punctuation {
+	color: #d4d4d4;
+}
+
+.dark-theme .token.property, .dark-theme .token.tag, .dark-theme .token.boolean, .dark-theme .token.number, .dark-theme .token.constant, .dark-theme .token.symbol, .dark-theme .token.inserted, .dark-theme .token.unit {
+	color: #b5cea8;
+}
+
+.dark-theme .token.selector, .dark-theme .token.attr-name, .dark-theme .token.string, .dark-theme .token.char, .dark-theme .token.builtin, .dark-theme .token.deleted {
+	color: #ce9178;
+}
+
+.dark-theme .language-css .token.string.url {
+	text-decoration: underline;
+}
+
+.dark-theme .token.operator, .dark-theme .token.entity {
+	color: #d4d4d4;
+}
+
+.dark-theme .token.operator.arrow {
+	color: #569CD6;
+}
+
+.dark-theme .token.atrule {
+	color: #ce9178;
+}
+
+.dark-theme .token.atrule .token.rule {
+	color: #c586c0;
+}
+
+.dark-theme .token.atrule .token.url {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.atrule .token.url .token.function {
+	color: #dcdcaa;
+}
+
+.dark-theme .token.atrule .token.url .token.punctuation {
+	color: #d4d4d4;
+}
+
+.dark-theme .token.keyword {
+	color: #569CD6;
+}
+
+.dark-theme .token.keyword.module, .dark-theme .token.keyword.control-flow {
+	color: #c586c0;
+}
+
+.dark-theme .token.function, .dark-theme .token.function .token.maybe-class-name {
+	color: #dcdcaa;
+}
+
+.dark-theme .token.regex {
+	color: #d16969;
+}
+
+.dark-theme .token.important {
+	color: #569cd6;
+}
+
+.dark-theme .token.italic {
+	font-style: italic;
+}
+
+.dark-theme .token.constant {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.class-name, .dark-theme .token.maybe-class-name {
+	color: #4ec9b0;
+}
+
+.dark-theme .token.console {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.parameter {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.interpolation {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.punctuation.interpolation-punctuation {
+	color: #569cd6;
+}
+
+.dark-theme .token.boolean {
+	color: #569cd6;
+}
+
+.dark-theme .token.property, .dark-theme .token.variable, .dark-theme .token.imports .token.maybe-class-name, .dark-theme .token.exports .token.maybe-class-name {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.selector {
+	color: #d7ba7d;
+}
+
+.dark-theme .token.escape {
+	color: #d7ba7d;
+}
+
+.dark-theme .token.tag {
+	color: #569cd6;
+}
+
+.dark-theme .token.tag .token.punctuation {
+	color: #808080;
+}
+
+.dark-theme .token.cdata {
+	color: #808080;
+}
+
+.dark-theme .token.attr-name {
+	color: #9cdcfe;
+}
+
+.dark-theme .token.attr-value, .dark-theme .token.attr-value .token.punctuation {
+	color: #ce9178;
+}
+
+.dark-theme .token.attr-value .token.punctuation.attr-equals {
+	color: #d4d4d4;
+}
+
+.dark-theme .token.entity {
+	color: #569cd6;
+}
+
+.dark-theme .token.namespace {
+	color: #4ec9b0;
+}
+
+.dark-theme pre[class*=language-javascript], .dark-theme code[class*=language-javascript], .dark-theme pre[class*=language-jsx], .dark-theme code[class*=language-jsx], .dark-theme pre[class*=language-typescript], .dark-theme code[class*=language-typescript], .dark-theme pre[class*=language-tsx], .dark-theme code[class*=language-tsx] {
+	color: #9cdcfe;
+}
+
+.dark-theme pre[class*=language-css], .dark-theme code[class*=language-css] {
+	color: #ce9178;
+}
+
+.dark-theme pre[class*=language-html], .dark-theme code[class*=language-html] {
+	color: #d4d4d4;
+}
+
+.dark-theme .language-regex .token.anchor {
+	color: #dcdcaa;
+}
+
+.dark-theme .language-html .token.punctuation {
+	color: #808080;
+}
+
+.dark-theme pre[data-line] {
+	position: relative;
+}
+
+.dark-theme pre[class*=language-]>code[class*=language-] {
+	position: relative;
+	z-index: 1;
+}
+
+.dark-theme .line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em;
+	background: #f7ebc6;
+	box-shadow: inset 5px 0 0 #f7d87c;
+	z-index: 0;
+	pointer-events: none;
+	line-height: inherit;
+	white-space: pre;
+}

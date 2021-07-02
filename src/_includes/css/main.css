@@ -8,6 +8,7 @@
     --gap-large: 2.25rem;
     --gap-small: 1.25rem;
     --color-lighter: #c9d1d9;
+    --color-darker: #24292e;
     --color-accent: #58a6ff;
     --color-border: rgb(60, 61, 63);
     --text-primary: var(--color-lighter);
@@ -16,6 +17,33 @@
     --bg-highlight: #161b22;
     --bg-highlight-bis: #333435;
     --bg-highlight-ter: #3e4349;
+
+    --bg-scroll-track: var(--bg-highlight-bis);
+    --bg-scroll-thumb: var(--color-border);
+    --bg-scroll-thumb-hover: var( --bg-highlight-ter);
+
+    --toggle-height: 20px;
+    --toggle-padding-y: 3px;
+    --toggle-width: 48px;
+    --toggle-padding-x: 4px;
+    --toggle-handle-width: 16px;
+    --bg-toggle-track: var(--bg-highlight-ter);
+
+
+}
+
+.light-theme {
+    --color-accent: #0366d6;
+    --color-border: #ebedef;
+    --text-primary: var(--color-darker);
+    --text-anchor: var(--color-accent);
+    --bg-page: #fff;
+    --bg-highlight: #f6f8fa;
+    --bg-highlight-bis: #d6d1d1;
+    --bg-highlight-ter: #a7a4a4;
+    --bg-scroll-track: var(--bg-highlight);
+    --bg-scroll-thumb: var(--bg-highlight-bis);
+    --bg-scroll-thumb-hover: var( --bg-highlight-ter);
 }
 
 #container {
@@ -104,10 +132,6 @@ pre {
     overflow: auto;
 }
 
-:not(pre)>code[class*="language-"], pre[class*="language-"] {
-    background-color: var(--bg-highlight);
-}
-
 p, pre, table, ul, ol {
     margin: var(--gap-small) 0;
 }
@@ -159,16 +183,16 @@ li ul, li ol {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-highlight-bis);
+    background: var(--bg-scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--color-border);
+    background: var(--bg-scroll-thumb);
     border-radius: var(--roundness);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--bg-highlight-ter)
+    background: var(--bg-scroll-thumb-hover);
 }
 
 img {
@@ -200,4 +224,35 @@ a:hover {
 nav#nav {
     background-color: var(--bg-highlight);
     padding: .75rem;
+}
+
+nav#nav .nav-content {
+    display: flex;
+    max-width: calc(var(--markdown-max-width) + var(--aside-width) + var(--gap-large));
+    margin: 0 auto;
+    align-items: center;
+}
+
+#home-link {
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.toggle {
+    height: 1.25rem;
+    width: 3.25rem;
+    display: flex;
+    background: var(--bg-highlight-ter);
+    padding: 4px;
+}
+.dark-theme .toggle {
+    justify-content: flex-end;
+}
+.toggle-handler {
+    background-color: var(--color-accent);
+    height: 100%;
+    width: 50%;
 }
