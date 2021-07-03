@@ -47,6 +47,7 @@ module.exports = function (eleventyConfig) {
         "svg",
         "txt",
         "jpg",
+        "ico",
     ]);
 
     return {
