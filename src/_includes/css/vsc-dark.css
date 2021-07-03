@@ -18,11 +18,6 @@
 	hyphens: none;
 }
 
-.dark-theme pre[class*=language-]::selection, .dark-theme code[class*=language-]::selection, .dark-theme pre[class*=language-] *::selection, .dark-theme code[class*=language-] *::selection {
-	text-shadow: none;
-	background: #75a7ca;
-}
-
 @media print {
 	.dark-theme pre[class*=language-], .dark-theme code[class*=language-] {
 		text-shadow: none;

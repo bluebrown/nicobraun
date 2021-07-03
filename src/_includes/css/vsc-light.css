@@ -21,13 +21,6 @@
     font-size: 1em;
 }
 
-.light-theme pre[class*=language-]::-moz-selection, .light-theme pre[class*=language-] ::-moz-selection, .light-theme code[class*=language-]::-moz-selection, .light-theme code[class*=language-] ::-moz-selection {
-    background-color: var(--bg-highlight);
-}
-
-.light-theme pre[class*=language-]::selection, .light-theme pre[class*=language-] ::selection, .light-theme code[class*=language-]::selection, .light-theme code[class*=language-] ::selection {
-    background-color: var(--bg-highlight);
-}
 
 .light-theme pre[class*=language-] {
     padding: 1em;
@@ -62,7 +55,7 @@
 }
 
 .light-theme .token.url, .light-theme .token.symbol, .light-theme .token.number, .light-theme .token.boolean, .light-theme .token.variable, .light-theme .token.constant, .light-theme .token.inserted {
-    color: #36acaa;
+    color: #1B5A5A;
 }
 
 .light-theme .token.atrule, .light-theme .token.keyword, .light-theme .token.attr-value, .light-theme .language-autohotkey .token.selector, .light-theme .language-json .token.boolean, .light-theme .language-json .token.number, .light-theme code[class*=language-css] {
@@ -82,7 +75,7 @@
 }
 
 .light-theme .token.important {
-    color: #e90;
+    color: #8D2F07;
 }
 
 .light-theme .token.important, .light-theme .token.bold {
@@ -94,7 +87,7 @@
 }
 
 .light-theme .token.class-name, .light-theme .language-json .token.property {
-    color: #2B91AF;
+    color: #1A586B;
 }
 
 .light-theme .token.tag, .light-theme .token.selector {
@@ -115,7 +108,7 @@
 }
 
 .light-theme .line-numbers-rows>span:before {
-    color: #2B91AF;
+    color: #1A586B;
 }
 
 .light-theme .line-highlight {

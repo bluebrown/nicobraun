@@ -19,6 +19,7 @@
     --color-darker: #24292e;
     --color-accent: #58a6ff;
     --color-border: rgb(60, 61, 63);
+    --color-selection: var(--color-accent);
 
     --text-primary: var(--color-lighter);
     --text-anchor: var(--color-accent);

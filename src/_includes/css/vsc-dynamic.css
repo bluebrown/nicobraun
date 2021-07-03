@@ -14,10 +14,11 @@
     --palette-cyan-dark: #4ec9b0;
     --palette-cyan: #9cdcfe;
     --palette-blue: #569CD6;
+    --palette-blue-light: #75a7ca;
     
     --code-color-text: var(--palette-lightest);
     --code-bg-main: var(--palette-darkest);
-    --code-bg-selection: #75a7ca;
+    --code-bg-selection: var(--palette-blue-light);
     --code-font-size: 13px;
 
     --code-token-doctype-tag: var(--palette-blue);
