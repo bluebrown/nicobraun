@@ -4,6 +4,7 @@
     --aside-width: 24rem;
     
     --page-font-size: 18px;
+    --mono-font-size: 15px;
     
     --roundness: 6px;
     --roundness-ter: 2px;
@@ -41,6 +42,14 @@
     --bg-toggle-track: var(--bg-highlight-ter);
 
 
+}
+
+.page-logo {
+    filter: opacity(0.7);
+}
+
+.light-theme .page-logo {
+    filter: none;
 }
 
 .light-theme {
