@@ -15,6 +15,8 @@
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+    background-color: transparent;
+	padding: 0;
 }
 
 .light-theme pre>code[class*=language-] {

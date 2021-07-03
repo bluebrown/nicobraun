@@ -1,3 +1,5 @@
+
+
 .dark-theme pre[class*=language-], .dark-theme code[class*=language-] {
 	color: #d4d4d4;
 	font-size: 93%;
@@ -16,6 +18,8 @@
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+	background-color: transparent;
+	padding: 0;
 }
 
 @media print {
@@ -236,3 +240,4 @@
 	line-height: inherit;
 	white-space: pre;
 }
+

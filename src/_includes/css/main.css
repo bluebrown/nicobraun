@@ -19,6 +19,7 @@
     --color-gray-light:  rgb(107, 109, 112);
     --color-darker: #24292e;
     --color-accent: #58a6ff;
+    --color-opaque: rgba(240, 246, 252, 0.15);
     --color-border: rgb(60, 61, 63);
     --color-selection: var(--color-accent);
 
@@ -26,6 +27,7 @@
     --text-anchor: var(--color-accent);
     
     --bg-page: #0d1117;
+    --bg-code: var(--color-opaque);
     --bg-highlight: #161b22;
     --bg-highlight-bis: var(--color-gray-dark);
     --bg-highlight-ter: var(--color-gray);
@@ -45,7 +47,7 @@
 }
 
 .page-logo {
-    filter: opacity(0.7);
+    filter: opacity(0.75);
 }
 
 .light-theme .page-logo {
@@ -57,6 +59,7 @@
     --color-border: #ebedef;
     --text-primary: var(--color-darker);
     --text-anchor: var(--color-accent);
+    --color-opaque: rgba(27, 31, 35, 0.05);
     --bg-page: #fff;
     --bg-highlight: #f6f8fa;
     --bg-highlight-bis: #d6d1d1;
@@ -278,4 +281,13 @@ button {
     height: 100%;
     width: 50%;
     border-radius: var(--roundness-ter);
+}
+
+
+code {
+    font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+    background: var(--bg-code);
+    border-radius: var(--roundness);
+    font-size: 85%;
+    padding: .2em .4em;
 }
